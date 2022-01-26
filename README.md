@@ -25,8 +25,9 @@ The input data (used in test purpose) is provided in the below folders
   * l_l_n: lower left x
   * u_r_m: upper right y
   * u_r_n: upper right x
-    
-
+  
+  ![alt text](https://github.com/manojMadarasingha/OpCASH/coord_system.jpg?raw=true)   
+ 
 
 
 
