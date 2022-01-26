@@ -13,9 +13,14 @@ Following packages are required.
 *	glpk              0.4.6
 *	networkx          2.4
 
-## Breif overview of the process
+## Breif overview of OpCASH
+360-degree videos a.k.a. spherical videos have become popular creating an immersive streaming experience for the user, nevertheless, these videos demand high bandwidth in operational networks and have strict latency requirements. Viewport (VP) aware streaming with variable tiling has been proposed as a promising solution to reduce bandwidth consumption while providing fine granularity to the user VP. Content caching at the edge has also been proposed to reduce the delivery latency. Though, combining these two mechanisms have potential advantages, applying conventional tile-based caching, which primarily tries to find identical tiles, is not feasible due to the high diversity in tile area and location in variable tiles. 
+To this end, we propose **OpCASH**, an ILP based mechanism to devise optimal cache tile configuration at a MEC server to provide a non-overlapping tile cover for a given VP request in variable tiles, while minimizing the requests to remote servers and reducing the delivery latency. 
+Experimental trace-driven simulation results show that we can achieve more than 95\% of VP coverage from cache after just 24 views of the video. Compared to a baseline which represents conventional tile-based caching,  **OpCASH** reduces the data fetched from the content servers by 85\% and total  content  delivery  time  by  74\%. 
 
+Overall process and sample tile configuration (Cache+CS) to cover a requested VP
 
+ <img src="images/Tile_composition.jpg" width="500">
 
 ## Run the script
 To run the script clone the repository to your local repository and install the required packages above. Then run the command
