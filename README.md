@@ -26,7 +26,7 @@ The input data (used in test purpose) is provided in the below folders
   * u_r_m: upper right y
   * u_r_n: upper right x
   
-![Alt text](https://github.com/manojMadarasingha/OpCASH/tree/main/images/coord_system.jpg?raw=true)   
+![](images/coord_system.jpg?raw=true)   
  
 
 
