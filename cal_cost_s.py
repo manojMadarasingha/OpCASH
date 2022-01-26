@@ -11,7 +11,7 @@ def store_bw_s2e(df_ct, store_path, n):
     if not os.path.exists(user_path):
         os.makedirs(user_path)
 
-    df_ct.to_csv(user_path + '/cost_bw_s2e.csv', index=False)
+    df_ct.to_csv(user_path + '/cost_s.csv', index=False)
 
     return
 

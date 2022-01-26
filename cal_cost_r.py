@@ -13,7 +13,7 @@ def store_view(df_ct, store_path, n):
     if not os.path.exists(user_path):
         os.makedirs(user_path)
 
-    df_ct.to_csv(user_path + '/cost_view.csv', index=False)
+    df_ct.to_csv(user_path + '/cost_r.csv', index=False)
 
     return
 
