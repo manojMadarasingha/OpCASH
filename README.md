@@ -46,7 +46,7 @@ The input data (used in test purpose) is provided in the below folders
     * User order of video streaming : There 3 randomly created orders
       * Chunk : There 120 chunks of 0.5 s long.
         * User : There 30 users.
-          * `A.csv` : Matrix A values
+          * `D.csv` : Matrix D values
           * `cost_r.csv` : cost vector r for each identified cached tiles
           * `cost_e.csv` : cost vector e for each identified cached tiles
           * `cost_s.csv` : cost vector s for each identified cached tiles
