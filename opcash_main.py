@@ -7,7 +7,7 @@ import numpy as np
 import os
 
 import settings
-import create_mat_A
+import create_mat_D
 import cal_cost_r
 import cal_cost_e
 import cal_cost_s
@@ -15,7 +15,7 @@ import run_glpk
 import partition_remianing_area
 import check_distribution
 import further_partition_new_tiles
-import multiprocessing as mp
+
 
 is_DEBUG = True
 
@@ -149,12 +149,12 @@ def run_algo(vid, chunk, rand_set,
         # run the algorithm for the users n>=1
         else:
 
-            # create matrix A. Also find wehether there is any cached tiles overlapping with the tiles
-            A, time_pre_A, overlapped_ct = create_mat_A.create_matrix_A(DT_tiles, n,
+            # create matrix D. Also find wehether there is any cached tiles overlapping with the tiles
+            D, time_pre_D, overlapped_ct = create_mat_D.create_matrix_D(DT_tiles, n,
                                                                         data_store_path,
                                                                         cached_tiles,
                                                                         ena_store=True)
-            t_for_complete.append(time_pre_A)
+            t_for_complete.append(time_pre_D)
 
             # for the remaining users, we first find whether there is any overlapped tiles with the VP of the user n
             if len(overlapped_ct) > 0:
@@ -193,7 +193,7 @@ def run_algo(vid, chunk, rand_set,
                 #     cost_lat_s2e = np.zeros(len(cost_s))
 
                 # run glpk. Return the selected tiles with their coordinates
-                sel_ct, t_ilp_sol = run_glpk.get_ilp_based_sol(A,
+                sel_ct, t_ilp_sol = run_glpk.get_ilp_based_sol(D,
                                                                cost_r, cost_e, cost_s,
                                                                n,
                                                                data_store_path,
@@ -279,7 +279,7 @@ def main():
 
     for v, vid in enumerate(vids):
         run_opcash(vid, w1, w2, w3, bw_trace, DT_path, BT_path, Data_store_path)
-
+        break
 
 if __name__ == main():
     main()
