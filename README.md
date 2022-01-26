@@ -13,6 +13,10 @@ Following packages are required.
 *	glpk              0.4.6
 *	networkx          2.4
 
+## Breif overview of the process
+
+
+
 ## Run the script
 To run the script clone the repository to your local repository and install the required packages above. Then run the command
 `python3 opcash_main.py`
@@ -26,8 +30,26 @@ The input data (used in test purpose) is provided in the below folders
   * u_r_m: upper right y
   * u_r_n: upper right x
   
-![](images/coord_system.jpg?raw=true)   
- 
+  Frame cooridinate system
+  
+  <img src="images/coord_system.jpg" width="500">
+
+* Tile_info_BT : Basic tile size information for 10 x 20 configuration for each video frame. We consider the first frame of a given chunk as a representative frame for the chunk.
+* BW_traces    : Bw traces for 4G. We use these traces mainly for the time calculations for data transmission. Moreover, we consider both 4G and 5G traces (in our case 2 representative values) for variable quality tile streaming. Codes for these experiments will be uploaded soon...
+* Data_store_path: Folder to store the tile information processed by OpCASH. We have provided the results for the first video in the test video sets. Format of the folder is as follows.
+  * Video : There 6 test videos. Result for the first video has been already given in `.zip` file
+    * User order of video streaming : There 3 randomly created orders
+      * Chunk : There 120 chunks of 0.5 s long.
+        * User : There 30 users.
+          * `A.csv` : Matrix A values
+          * `cost_r.csv` : cost vector r for each identified cached tiles
+          * `cost_e.csv` : cost vector e for each identified cached tiles
+          * `cost_s.csv` : cost vector s for each identified cached tiles
+          * `overlapped_cts.csv`: coordinates of overlapped cached tiles
+          * `tiles_cts.csv` : selected cached tiles to cover the user VP
+          * `tiles_new.csv` : new tiles fetched from CS to cover the user VP
+          * `total_cts` : cached tiles stored in the MEC upto _n_ number of user
+        
 
 
 
